@@ -42,9 +42,9 @@ class LinkedList:
     def reverse_list(self, node, prev):
         self.prev = None
         self.node = None
-        # exit out of the function if list is empty
-        if not self.head:
-            return False
+        # # exit out of the function if list is empty
+        # if not self.head:
+        #     return False
 
         # grab a hold of the starting node
         current = self.head
@@ -64,3 +64,15 @@ class LinkedList:
         # else:
         #     current.next_node = self.head
         #     self.head = self.head.next_node
+
+# RECURSIVE
+ 1=>2=>3=>None
+
+ 3=>2=>1=>None
+ # 1st case: check if node passed in none, return none
+ # 2nd case: is node.next is none, set the head to the node to make it first and return the node
+ # 3rd case: create temporary node = recursive reverse method
+ # After recursive call, reverse the order
+ # set temp.node = node
+ # node.next = None
+ # return node
