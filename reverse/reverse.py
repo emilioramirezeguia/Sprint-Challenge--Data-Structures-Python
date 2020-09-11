@@ -40,35 +40,24 @@ class LinkedList:
         return False
 
     def reverse_list(self, node, prev):
-        self.prev = None
-        self.node = None
-        # # exit out of the function if list is empty
-        # if not self.head:
-        #     return False
+        if node is None:
+            return None
+        # if list has only 1 node
+        if node.next_node is None:
+            self.head = node
+            return node
 
-        # grab a hold of the starting node
-        current = self.head
+        temporary_node = self.reverse_list(node.get_next(), node)
+        temporary_node.next_node = node
+        node.set_next(None)
 
-        # while a node exists
-        while current:
-            next = current.next_node
-            current.next = prev
-            prev = current
-            current = next
-        self.head = prev
+        return node
 
-        # # if the node has a next node
-        # if current.next_node:
-        #     # update the current node to be that node (go to that node)
-        #     current = current.get_next()
-        # else:
-        #     current.next_node = self.head
-        #     self.head = self.head.next_node
 
 # RECURSIVE
- 1=>2=>3=>None
+#  1=>2=>3=>None
 
- 3=>2=>1=>None
+#  3=>2=>1=>None
  # 1st case: check if node passed in none, return none
  # 2nd case: is node.next is none, set the head to the node to make it first and return the node
  # 3rd case: create temporary node = recursive reverse method
