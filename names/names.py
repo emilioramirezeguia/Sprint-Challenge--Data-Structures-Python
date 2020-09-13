@@ -20,7 +20,7 @@ duplicates = []  # Return the list of duplicates in this data structure
 #             duplicates.append(name_1)
 
 # create an instance of a binary search tree
-bst = BSTNode("Emilio")
+bst = BSTNode("")
 # loop the first list of names, insert each name into binary search tree
 for name in names_1:
     bst.insert(name)
